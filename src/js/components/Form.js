@@ -10,20 +10,15 @@ const mapDispatchToProps = dispatch => {
 };
 
 class ConnectedForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    title: ''
+  };
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidvl();
