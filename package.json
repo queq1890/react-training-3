@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "redux": "^4.0.0"
   }
 }
