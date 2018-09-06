@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import uuidvl from "uuid";
 import { addArticle } from "../actions/index";
@@ -9,7 +9,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class ConnectedForm extends Component {
+class ConnectedForm extends PureComponent {
   state = {
     title: ''
   };
