@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import { connect } from "react-redux";
-import uuidvl from "uuid";
-import { addArticle } from "../actions/index";
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import uuidvl from 'uuid';
+import { addArticle } from '../actions/index';
 
 const mapDispatchToProps = dispatch => ({
   addArticle: article => dispatch(addArticle(article)),
@@ -12,6 +12,7 @@ class ConnectedForm extends PureComponent {
     title: '',
   };
 
+
   handleChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   }
@@ -21,7 +22,7 @@ class ConnectedForm extends PureComponent {
     const { title } = this.state;
     const id = uuidvl();
     this.props.addArticle({ title, id });
-    this.setState({ title: "" });
+    this.setState({ title: '' });
   }
 
   render() {
