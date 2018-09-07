@@ -30,14 +30,16 @@ class ConnectedForm extends PureComponent {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            className="form-control"
-            id="title"
-            value={title}
-            onChange={this.handleChange}
-          />
+          <label htmlFor="title">
+            Title
+            <input
+              type="text"
+              className="form-control"
+              id="title"
+              value={title}
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
         <button type="submit" className="btn btn-success btn-lg">
           SAVE
