@@ -3,15 +3,13 @@ import { connect } from "react-redux";
 import uuidvl from "uuid";
 import { addArticle } from "../actions/index";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addArticle: article => dispatch(addArticle(article))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  addArticle: article => dispatch(addArticle(article)),
+});
 
 class ConnectedForm extends PureComponent {
   state = {
-    title: ''
+    title: '',
   };
 
   handleChange = (event) => {
