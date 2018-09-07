@@ -28,8 +28,8 @@ class ConnectedForm extends PureComponent {
   render() {
     const { title } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <FormWrapper>
+      <FormWrapper onSubmit={this.handleSubmit}>
+        <InputWrapper>
           <Label htmlFor="title">
             Title:
             <Input
@@ -40,21 +40,29 @@ class ConnectedForm extends PureComponent {
               onChange={this.handleChange}
             />
           </Label>
-        </FormWrapper>
+        </InputWrapper>
         <Button type="submit" className="btn btn-success btn-lg">
           SAVE
         </Button>
-      </form>
+      </FormWrapper>
     );
   }
 }
 
-const FormWrapper = styled.div`
+const FormWrapper = styled.form`
+  overflow: hidden;
+`
+
+const InputWrapper = styled.div`
   float: left;
 `
 
 const Input = styled.input`
   background-color: white;
+
+  &:focus {
+    outline: 0;
+  }
 `
 
 const Label = styled.label`
@@ -68,6 +76,10 @@ const Button = styled.button`
   padding: 5px;
   border-radius: 5px;
   float: left;
+
+  &:focus {
+    outline: 0;
+  }
 `
 
 const Form = connect(null, mapDispatchToProps)(ConnectedForm);
