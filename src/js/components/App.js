@@ -1,9 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import List from './List';
 import Form from './Form';
 
 const App = () => (
-  <div className="row mt-5">
+  <MainContainer>
     <div className="col-md-4 offset-md-1">
       <h2>Articles</h2>
       <List />
@@ -12,7 +13,13 @@ const App = () => (
       <h2>Add a new article</h2>
       <Form />
     </div>
-  </div>
+  </MainContainer>
 );
+
+const MainContainer = styled.div`
+  background-color: #ddd;
+  height: 100vh;
+  padding: 20px;
+`
 
 export default App;
