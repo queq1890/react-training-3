@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import uuidvl from 'uuid';
-import { addArticle } from '../../actions/index';
+import { addArticle } from 'actions/index';
 import {
   FormWrapper, InputWrapper, Input, Label, Button,
 } from './style';

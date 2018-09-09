@@ -39,7 +39,11 @@ module.exports = {
   ],
   resolve: {
     alias: {
+      actions: path.join(__dirname, 'src/js/actions'),
       components: path.join(__dirname, 'src/js/components'),
+      constants: path.join(__dirname, 'src/js/constants'),
+      reducers: path.join(__dirname, 'src/js/reducers'),
+      store: path.join(__dirname, 'src/js/store'),
     },
     extensions: ['.webpack.js', '.web.js', '.js', '.yml', '.style.js'],
   },
