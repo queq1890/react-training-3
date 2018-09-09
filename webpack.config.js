@@ -40,6 +40,7 @@ module.exports = {
   resolve: {
     alias: {
       components: path.join(__dirname, 'src/js/components')
-    }
+    },
+    extensions: ['.webpack.js', '.web.js', '.js', '.yml', '.style.js'],
   },
 };
