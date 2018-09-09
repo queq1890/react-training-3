@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import uuidvl from 'uuid';
-import { addArticle } from '../actions/index';
+import { addArticle } from '../../actions';
 
 const mapDispatchToProps = dispatch => ({
   addArticle: article => dispatch(addArticle(article)),
@@ -13,17 +13,17 @@ class ConnectedForm extends PureComponent {
     title: '',
   };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
-  }
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidvl();
     this.props.addArticle({ title, id });
     this.setState({ title: '' });
-  }
+  };
 
   render() {
     const { title } = this.state;
@@ -51,11 +51,11 @@ class ConnectedForm extends PureComponent {
 
 const FormWrapper = styled.form`
   overflow: hidden;
-`
+`;
 
 const InputWrapper = styled.div`
   float: left;
-`
+`;
 
 const Input = styled.input`
   background-color: white;
@@ -63,12 +63,12 @@ const Input = styled.input`
   &:focus {
     outline: 0;
   }
-`
+`;
 
 const Label = styled.label`
   display: block;
   padding: 5px;
-`
+`;
 
 const Button = styled.button`
   margin: 0 10px;
@@ -80,8 +80,11 @@ const Button = styled.button`
   &:focus {
     outline: 0;
   }
-`
+`;
 
-const Form = connect(null, mapDispatchToProps)(ConnectedForm);
+const Form = connect(
+  null,
+  mapDispatchToProps
+)(ConnectedForm);
 
 export default Form;

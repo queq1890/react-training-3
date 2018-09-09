@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import List from './List';
-import Form from './Form';
+import List from '../List/index';
+import Form from '../Form/index';
 
 const App = () => (
   <MainContainer>
@@ -20,6 +20,6 @@ const MainContainer = styled.div`
   background-color: #ddd;
   height: 100vh;
   padding: 20px;
-`
+`;
 
 export default App;
