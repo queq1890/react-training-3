@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import MainContainer from './MainContainer';
 import List from '../List/index';
 import Form from '../Form/index';
 
@@ -15,11 +15,5 @@ const App = () => (
     </div>
   </MainContainer>
 );
-
-const MainContainer = styled.div`
-  background-color: #ddd;
-  height: 100vh;
-  padding: 20px;
-`;
 
 export default App;
