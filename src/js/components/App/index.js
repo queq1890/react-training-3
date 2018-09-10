@@ -1,6 +1,6 @@
 import React from 'react';
-import List from 'components/List/index';
-import Form from 'components/Form/index';
+import List from 'components/List';
+import Form from 'components/Form';
 import MainContainer from './MainContainer';
 
 const App = () => (
