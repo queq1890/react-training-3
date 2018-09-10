@@ -1,10 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Article from './Article';
+import Article from './style';
 
-const mapStateToProps = state => ({ articles: state.articles });
-
-const ConnectedList = ({ articles }) => (
+const List = ({ articles }) => (
   <ul className="list-group list-group-flush">
     {articles.map(el => (
       <Article className="list-group-item" key={el.id}>
@@ -13,7 +10,5 @@ const ConnectedList = ({ articles }) => (
     ))}
   </ul>
 );
-
-const List = connect(mapStateToProps)(ConnectedList);
 
 export default List;
