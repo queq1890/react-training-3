@@ -1,18 +1,19 @@
 import React from 'react';
-import List from './List';
-import Form from './Form';
+import ListContainer from 'containers/ListContainer';
+import FormContainer from 'containers/FormContainer';
+import MainWrapper from './MainWrapper';
 
 const App = () => (
-  <div className="row mt-5">
+  <MainWrapper>
     <div className="col-md-4 offset-md-1">
       <h2>Articles</h2>
-      <List />
+      <ListContainer />
     </div>
     <div className="col-md-4 offset-md-1">
       <h2>Add a new article</h2>
-      <Form />
+      <FormContainer />
     </div>
-  </div>
+  </MainWrapper>
 );
 
 export default App;

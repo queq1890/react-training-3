@@ -1,10 +1,10 @@
-import { ADD_ARTICLE } from '../constants/action-types';
+import { ADD_ARTICLE } from './constants';
 
 const initialState = {
   articles: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const formReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ARTICLE:
       return { ...state, articles: [...state.articles, action.payload] };
@@ -13,4 +13,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default formReducer;
