@@ -1,10 +1,10 @@
 import React from 'react';
 import ListContainer from 'containers/ListContainer';
 import FormContainer from 'containers/FormContainer';
-import MainContainer from './MainContainer';
+import MainWrapper from './MainWrapper';
 
 const App = () => (
-  <MainContainer>
+  <MainWrapper>
     <div className="col-md-4 offset-md-1">
       <h2>Articles</h2>
       <ListContainer />
@@ -13,7 +13,7 @@ const App = () => (
       <h2>Add a new article</h2>
       <FormContainer />
     </div>
-  </MainContainer>
+  </MainWrapper>
 );
 
 export default App;
