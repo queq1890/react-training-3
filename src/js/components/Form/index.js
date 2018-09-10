@@ -1,16 +1,10 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import uuidvl from 'uuid';
-import { addArticle } from 'actions';
 import {
   FormWrapper, InputWrapper, Input, Label, Button,
 } from './style';
 
-const mapDispatchToProps = dispatch => ({
-  addArticle: article => dispatch(addArticle(article)),
-});
-
-class ConnectedForm extends PureComponent {
+class Form extends PureComponent {
   state = {
     title: '',
   };
@@ -50,10 +44,5 @@ class ConnectedForm extends PureComponent {
     );
   }
 }
-
-const Form = connect(
-  null,
-  mapDispatchToProps
-)(ConnectedForm);
 
 export default Form;
