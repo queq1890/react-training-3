@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import uuidvl from 'uuid';
+import { FormattedMessage } from 'react-intl';
 import {
   FormWrapper, InputWrapper, Input, Label, Button,
 } from './style';
@@ -27,7 +28,7 @@ class Form extends PureComponent {
       <FormWrapper onSubmit={this.handleSubmit}>
         <InputWrapper>
           <Label htmlFor="title">
-            Title:
+            <FormattedMessage id="article.title" />
             <Input
               type="text"
               className="form-control"
