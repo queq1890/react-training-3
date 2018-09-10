@@ -1,14 +1,14 @@
 export default {
   en: {
-    "article.new": "Add a new article",
-    "article.title": "Title",
+    'article.new': 'Add a new article',
+    'article.title': 'Title',
 
-    "articles.header": "Articles"
+    'articles.header': 'Articles',
   },
   ja: {
-    "article.new": "記事を新規作成する",
-    "article.title": "タイトル",
+    'article.new': '記事を新規作成する',
+    'article.title': 'タイトル',
 
-    "articles.header": "記事一覧"
-  }
+    'articles.header': '記事一覧',
+  },
 };
