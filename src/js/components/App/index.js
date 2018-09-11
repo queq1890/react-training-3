@@ -10,11 +10,21 @@ import MainWrapper from './MainWrapper';
 addLocaleData([...en, ...ja]);
 
 class App extends PureComponent {
+  setLocale = event => {
+    const newLocale = event.target.value;
+    const { setLocale } = this.props;
+    setLocale(newLocale);
+  };
+
   render() {
     const { locale } = this.props;
     return (
       <IntlProvider locale={locale} messages={messages[locale]}>
         <MainWrapper>
+          <select onChange={this.setLocale}>
+            <option value="en">English</option>
+            <option value="ja">Japan</option>
+          </select>
           <div className="col-md-4 offset-md-1">
             <h2>
               <FormattedMessage id="articles.header" />

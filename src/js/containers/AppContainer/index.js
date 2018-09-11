@@ -7,11 +7,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addLocale: locale => dispatch(setLocale(locale)),
+  setLocale: locale => dispatch(setLocale(locale)),
 });
 
 const AppContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(App);
 
 export default AppContainer;

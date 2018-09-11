@@ -1,4 +1,4 @@
-import SET_LOCALE from './constants';
+import { SET_LOCALE } from './constants';
 
 const initialState = {
   locale: 'en',
@@ -7,7 +7,10 @@ const initialState = {
 const localeReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_LOCALE:
-      return { ...state, locale: state.locale };
+      return {
+        ...state,
+        locale: action.payload,
+      };
     default:
       return state;
   }
