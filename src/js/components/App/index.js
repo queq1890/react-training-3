@@ -24,7 +24,7 @@ class App extends PureComponent {
         <MainWrapper>
           <select onChange={this.setLocale}>
             <option value="en">English</option>
-            <option value="ja">Japan</option>
+            <option value="ja">Japanese</option>
           </select>
           <div className="col-md-4 offset-md-1">
             <h2>
