@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Article from './style';
 
 const List = ({ articles }) => (
@@ -10,5 +11,9 @@ const List = ({ articles }) => (
     ))}
   </ul>
 );
+
+List.propTypes = {
+  articles: PropTypes.arrayOf(Object),
+};
 
 export default List;
