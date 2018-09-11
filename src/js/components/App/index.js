@@ -19,7 +19,7 @@ class App extends PureComponent {
   render() {
     const { locale } = this.props;
     return (
-      <IntlProvider locale={locale} messages={messages[locale]}>
+      <IntlProvider locale={locale} messages={messages[locale]} key={locale}>
         <MainWrapper>
           <select onChange={this.setLocale}>
             <option value="en">English</option>
