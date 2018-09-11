@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import uuidvl from 'uuid';
+import { FormattedMessage } from 'react-intl';
 import {
   FormWrapper, InputWrapper, Input, Label, Button,
 } from './style';
@@ -17,7 +19,9 @@ class Form extends PureComponent {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidvl();
-    this.props.addArticle({ title, id });
+    const { addArticle } = this.props;
+
+    addArticle({ title, id });
     this.setState({ title: '' });
   };
 
@@ -27,7 +31,7 @@ class Form extends PureComponent {
       <FormWrapper onSubmit={this.handleSubmit}>
         <InputWrapper>
           <Label htmlFor="title">
-            Title:
+            <FormattedMessage id="article.title" />
             <Input
               type="text"
               className="form-control"
@@ -44,5 +48,9 @@ class Form extends PureComponent {
     );
   }
 }
+
+Form.propTypes = {
+  addArticle: PropTypes.func,
+};
 
 export default Form;
