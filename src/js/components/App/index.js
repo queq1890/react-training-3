@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import ListContainer from 'containers/ListContainer';
 import FormContainer from 'containers/FormContainer';
 import { addLocaleData, FormattedMessage, IntlProvider } from 'react-intl';
@@ -42,5 +43,10 @@ class App extends PureComponent {
     );
   }
 }
+
+App.propTypes = {
+  setLocale: PropTypes.func,
+  locale: PropTypes.string,
+};
 
 export default App;

@@ -43,6 +43,7 @@
   "dependencies": {
     "babel-preset-stage-0": "^6.24.1",
     "eslint-import-resolver-webpack": "^0.10.1",
+    "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-intl": "^2.4.0",

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import uuidvl from 'uuid';
 import { FormattedMessage } from 'react-intl';
 import {
@@ -18,7 +19,9 @@ class Form extends PureComponent {
     event.preventDefault();
     const { title } = this.state;
     const id = uuidvl();
-    this.props.addArticle({ title, id });
+    const { addArticle } = this.props;
+
+    addArticle({ title, id });
     this.setState({ title: '' });
   };
 
@@ -45,5 +48,9 @@ class Form extends PureComponent {
     );
   }
 }
+
+Form.propTypes = {
+  addArticle: PropTypes.func,
+};
 
 export default Form;
