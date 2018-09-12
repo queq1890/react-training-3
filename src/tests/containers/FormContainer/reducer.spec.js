@@ -1,11 +1,9 @@
-import formReducer from 'containers/FormContainer/reducer';
+import formReducer, { initialState } from 'containers/FormContainer/reducer';
 import { ADD_ARTICLE } from 'containers/FormContainer/constants';
 
 describe('formReducer', () => {
   it('should return the initial state', () => {
-    expect(formReducer(undefined, {})).toEqual({
-      articles: [],
-    });
+    expect(formReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle ADD_ARTICLE', () => {

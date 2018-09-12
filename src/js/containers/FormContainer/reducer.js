@@ -1,6 +1,6 @@
 import { ADD_ARTICLE } from './constants';
 
-const initialState = {
+export const initialState = {
   articles: [],
 };
 
