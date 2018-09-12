@@ -7,6 +7,10 @@ import FormContainer from 'containers/FormContainer';
 import { shallow } from 'enzyme';
 
 describe('<App />', () => {
+  it('renders without crashing', () => {
+    shallow(<App />);
+  });
+
   it('changes locale depending on props', () => {
     const component = shallow(<App locale="en" />);
     expect(component.find('IntlProvider').prop('locale')).toEqual('en');
