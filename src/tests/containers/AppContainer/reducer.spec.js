@@ -3,9 +3,7 @@ import { SET_LOCALE } from 'containers/AppContainer/constants';
 
 describe('localeReducer', () => {
   it('should return the initial state', () => {
-    expect(localeReducer(undefined, {})).toEqual({
-      locale: 'en',
-    });
+    expect(localeReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle SET_LOCALE', () => {
