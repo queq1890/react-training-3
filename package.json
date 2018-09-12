@@ -60,7 +60,16 @@
   "jest": {
     "moduleNameMapper": {
       "^components/(.+)": "<rootDir>/src/js/components/$1",
-      "^containers/(.+)": "<rootDir>/src/js/containers/$1"
-    }
+      "^containers/(.+)": "<rootDir>/src/js/containers/$1",
+      "^locales/(.+)": "<rootDir>/src/js/locales/$1"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node",
+      "style.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jestSetup.js"
   }
 }
