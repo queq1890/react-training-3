@@ -62,8 +62,7 @@
     "moduleNameMapper": {
       "^components/(.+)": "<rootDir>/src/js/components/$1",
       "^containers/(.+)": "<rootDir>/src/js/containers/$1",
-      "^locales/(.+)": "<rootDir>/src/js/locales/$1",
-      "^tests/(.+)": "<rootDir>/src/tests/$1"
+      "^locales/(.+)": "<rootDir>/src/js/locales/$1"
     },
     "moduleFileExtensions": [
       "js",
