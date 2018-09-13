@@ -1,6 +1,6 @@
 import { SET_LOCALE } from './constants';
 
-const initialState = {
+export const initialState = {
   locale: 'en',
 };
 

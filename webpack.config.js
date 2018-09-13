@@ -42,6 +42,7 @@ module.exports = {
       components: path.join(__dirname, 'src/js/components'),
       containers: path.join(__dirname, 'src/js/containers'),
       locales: path.join(__dirname, 'src/js/locales'),
+      tests: path.join(__dirname, 'src/tests'),
     },
     extensions: ['.webpack.js', '.web.js', '.js', '.yml', '.style.js'],
   },

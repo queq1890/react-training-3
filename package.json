@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
     "eslint": "eslint src",
-    "eslint:fix": "eslint --fix src"
+    "eslint:fix": "eslint --fix src",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -41,8 +43,12 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint-import-resolver-webpack": "^0.10.1",
+    "jest": "^23.6.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
@@ -51,5 +57,34 @@
     "redux": "^4.0.0",
     "styled-components": "^4.0.0-beta.2",
     "uuid": "^3.3.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/js/containers/**/*.{js,jsx}",
+      "src/js/components/**/*.{js,jsx}",
+      "!src/js/tests/**/*.spec.{js,jsx}",
+      "!src/js/containers/**/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 90,
+        "branches": 90,
+        "functions": 90,
+        "lines": 90
+      }
+    },
+    "moduleNameMapper": {
+      "^components/(.+)": "<rootDir>/src/js/components/$1",
+      "^containers/(.+)": "<rootDir>/src/js/containers/$1",
+      "^locales/(.+)": "<rootDir>/src/js/locales/$1"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node",
+      "style.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jestSetup.js"
   }
 }
