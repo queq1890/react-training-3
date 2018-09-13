@@ -23,4 +23,22 @@ describe('<Form />', () => {
     expect(component.find(Label)).toHaveLength(1);
     expect(component.find(Button)).toHaveLength(1);
   });
+
+  it('handles onSubmit', () => {
+    const mockFn = jest.fn();
+    const component = shallow(<Form addArticle={mockFn} />);
+
+    component
+      .find(FormWrapper)
+      .simulate('submit', { preventDefault: () => {} });
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls handleChange', () => {
+    const component = shallow(<Form />);
+    const targetValue = { value: 'Test title' };
+
+    component.find(Input).simulate('change', { target: targetValue });
+    expect(component.state().title).toEqual('Test title');
+  });
 });
