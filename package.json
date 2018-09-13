@@ -59,6 +59,19 @@
     "uuid": "^3.3.2"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/js/containers/**/*.{js,jsx}",
+      "src/js/components/**/*.{js,jsx}",
+      "!src/js/tests/**/*.spec.{js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 90,
+        "branches": 90,
+        "functions": 90,
+        "lines": 90
+      }
+    },
     "moduleNameMapper": {
       "^components/(.+)": "<rootDir>/src/js/components/$1",
       "^containers/(.+)": "<rootDir>/src/js/containers/$1",
