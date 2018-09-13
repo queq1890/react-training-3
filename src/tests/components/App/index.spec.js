@@ -23,4 +23,12 @@ describe('<App />', () => {
     expect(component.find(ListContainer)).toHaveLength(1);
     expect(component.find(FormContainer)).toHaveLength(1);
   });
+
+  it('handle onChange', () => {
+    const mockFn = jest.fn();
+    const component = shallow(<App setLocale={mockFn} />);
+
+    component.find('select').simulate('change', { target: { value: 'ja' } });
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  });
 });
