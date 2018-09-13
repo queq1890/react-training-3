@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ListContainer from 'containers/ListContainer';
 import FormContainer from 'containers/FormContainer';
+import GithubUserContainer from 'containers/GithubUserContainer';
 import { addLocaleData, FormattedMessage, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import ja from 'react-intl/locale-data/ja';
@@ -37,6 +38,7 @@ class App extends PureComponent {
               <FormattedMessage id="article.new" />
             </h2>
             <FormContainer />
+            <GithubUserContainer />
           </div>
         </MainWrapper>
       </IntlProvider>
