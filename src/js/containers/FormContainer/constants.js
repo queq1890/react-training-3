@@ -1,1 +1,1 @@
-export const ADD_ARTICLE = 'ADD_ARITCLE';
+export const ADD_ARTICLE = 'ADD_ARTICLE';
