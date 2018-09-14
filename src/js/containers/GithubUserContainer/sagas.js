@@ -1,17 +1,23 @@
 import {
-  call, put, fork, takeLatest, all,
+  put, call, fork, all, takeLatest,
 } from 'redux-saga/effects';
-import axios from 'axios';
-import FETCH_GITHUB_USER from './constants';
+import { getUserAPI } from './requests';
+import { FETCH_GITHUB_USER } from './constants';
+import { fetchUserSuccess, fetchUserFail } from './actions';
 
-const getGithubUser = () => {
-  const user = axios.get('https://api.github.com/users/queq1890');
-  console.log(user);
-  return user;
-};
+function* getGithubUser() {
+  try {
+    const profile = yield call(getUserAPI);
+    yield put(fetchUserSuccess(profile));
+  } catch (e) {
+    yield put(fetchUserFail(e));
+  }
+}
 
-function* fetchGithubUser(action) {}
+function* watchGithubUser() {
+  yield takeLatest(FETCH_GITHUB_USER, getGithubUser);
+}
 
 export default function* githubSaga() {
-  yield takeEvery(FETCH_GITHUB_USER, fetchGithubUser);
+  yield all([fork(watchGithubUser)]);
 }
