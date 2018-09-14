@@ -1,9 +1,6 @@
 import { all } from 'redux-saga/effects';
+import githubSaga from 'containers/GithubUserContainer/sagas';
 
-function* rootSaga() {
-  yield all([
-    // here you add some sagas
-  ]);
+export default function* rootSaga() {
+  yield all([githubSaga()]);
 }
-
-export default rootSaga;

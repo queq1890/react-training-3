@@ -1,6 +1,6 @@
 import formReducer from 'containers/FormContainer/reducer';
 import localeReducer from 'containers/AppContainer/reducer';
-import githubReducer from 'containers/GithubUserCOntainer/reducer';
+import githubReducer from 'containers/GithubUserContainer/reducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
