@@ -13,7 +13,9 @@ class GithubUser extends PureComponent {
     console.log('from render error', err);
     return (
       <div>
-        <button onClick={this.getProfile}>get profile</button>
+        <button type="submit" onClick={this.getProfile}>
+          get profile
+        </button>
       </div>
     );
   }
@@ -21,6 +23,8 @@ class GithubUser extends PureComponent {
 
 GithubUser.propTypes = {
   fetchGithubUser: PropTypes.func,
+  profile: PropTypes.arrayOf(Object),
+  err: PropTypes.bool,
 };
 
 export default GithubUser;
