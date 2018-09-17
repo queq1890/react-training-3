@@ -12,7 +12,6 @@ const store = createStore(
   composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 
-// After we define rootSaga, remove comment out
 sagaMiddleware.run(rootSaga);
 
 export default store;
