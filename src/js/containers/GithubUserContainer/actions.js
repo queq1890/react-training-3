@@ -16,5 +16,5 @@ export const fetchUserSuccess = user => ({
 
 export const fetchUserFail = err => ({
   type: FETCH_GITHUB_USER_FAILED,
-  err,
+  payload: err,
 });

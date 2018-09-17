@@ -5,9 +5,8 @@ import {
 } from './constants';
 
 const initialState = {
-  user: '',
   profile: {},
-  err: false,
+  err: {},
   loading: false,
 };
 
@@ -27,8 +26,7 @@ const githubReducer = (state = initialState, action) => {
     case FETCH_GITHUB_USER_FAILED:
       return {
         ...state,
-        profile: {},
-        err: true,
+        err: action.payload,
         loading: false,
       };
     default:

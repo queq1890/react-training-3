@@ -3,7 +3,6 @@ import GithubUser from 'components/GithubUser';
 import { fetchGithubUser } from './actions';
 
 const mapStateToProps = state => ({
-  user: state.githubReducer.user,
   profile: state.githubReducer.profile,
   err: state.githubReducer.err,
   loading: state.githubReducer.loading,
