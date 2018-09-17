@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
   user: state.githubReducer.user,
   profile: state.githubReducer.profile,
   err: state.githubReducer.err,
+  loading: false,
 });
 
 const mapDispatchToProps = dispatch => ({
