@@ -1,3 +1,4 @@
 import axios from 'axios';
+import checkStatus from 'utils/requests';
 
-export const getUserAPI = () => axios.get('https://api.github.com/users/queq1890').then(res => res.data);
+export const getUserAPI = () => axios.get('https://api.github.com/users/queq1890').then(checkStatus);
