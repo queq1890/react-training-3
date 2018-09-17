@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 const Img = styled.img`
-  width: 44px;
   height: 44px;
 `;
 
-export { Img };
+const Btn = styled.button`
+  width: 100px;
+  height: 50px;
+`;
+
+export { Img, Btn };
