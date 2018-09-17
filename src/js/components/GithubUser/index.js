@@ -12,6 +12,16 @@ class GithubUser extends PureComponent {
 
   render() {
     const { profile, err, loading } = this.props;
+
+    if (!isEmpty(err)) {
+      return (
+        <div>
+          {err.response.status}
+          {err.response.statusText}
+        </div>
+      );
+    }
+
     if (loading === true) {
       return <Loader active inline />;
     }
@@ -38,8 +48,13 @@ class GithubUser extends PureComponent {
 
 GithubUser.propTypes = {
   fetchGithubUser: PropTypes.func,
-  profile: PropTypes.arrayOf(Object),
-  err: PropTypes.bool,
+  profile: PropTypes.shape({ avatar_url: PropTypes.string }),
+  err: PropTypes.shape({
+    response: PropTypes.shape({
+      status: PropTypes.number,
+      statusText: PropTypes.string,
+    }),
+  }),
   loading: PropTypes.bool,
 };
 
