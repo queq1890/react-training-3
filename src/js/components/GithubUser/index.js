@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
+import { Loader } from 'semantic-ui-react';
 import { Img, Btn } from './style';
 
 class GithubUser extends PureComponent {
@@ -12,7 +13,7 @@ class GithubUser extends PureComponent {
   render() {
     const { profile, err, loading } = this.props;
     if (loading === true) {
-      return <div>読み込み中</div>;
+      return <Loader active inline />;
     }
 
     if (loading === false && !isEmpty(profile)) {
