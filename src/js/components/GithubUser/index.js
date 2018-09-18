@@ -22,22 +22,13 @@ class GithubUser extends PureComponent {
       );
     }
 
-    if (loading === true) {
-      return <Loader active inline />;
-    }
-
-    if (loading === false && !isEmpty(profile)) {
-      return (
-        <div>
-          <Img src={profile.avatar_url} alt="github icon" />
-          <Btn type="submit" onClick={this.getProfile}>
-            get profile
-          </Btn>
-        </div>
-      );
-    }
-    return (
+    return loading ? (
+      <Loader active inline />
+    ) : (
       <div>
+        {!isEmpty(profile) && (
+          <Img src={profile.avatar_url} alt="github icon" />
+        )}
         <Btn type="submit" onClick={this.getProfile}>
           get profile
         </Btn>
